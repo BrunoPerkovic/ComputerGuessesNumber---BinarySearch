@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.scss";
 import GameOption from "./Components/GameOption/GameOption";
 import InputBar from "./Components/InputBar/InputBar";
@@ -75,7 +74,7 @@ function App() {
 
   const handleGameOption = (option) => {
     if (checkLie(chosenNumber, lastGuessedNumber, option)) {
-      alert("CHEATING!");
+      alert("CHEATING! DONT TELL ME WRONG NUMBER!");
       return;
     }
 
@@ -117,14 +116,14 @@ function App() {
           Insert a number which will be the length of range:
         </div>
         <InputBar
-          value={"number"}
           onChangeFunction={handlePlayerInput}
           onKeyUpFunction={handleArrayRange}
         />
       </div>
 
       <div className="text">
-        This range goes from {arrayRange[0]} to {arrayRange[arrayRange.length]}
+        This range goes from {arrayRange[0]} to{" "}
+        {arrayRange[arrayRange.length - 1]}
       </div>
 
       <div className="guessedNumberContainer">
@@ -148,15 +147,17 @@ function App() {
         START GAME
       </button>
 
+      <div>{seeIfPlayerIsLying && <div>CHEATING!</div>}</div>
+
       <div className="text">
         Click on one of below available options so you can guide computer to
         guess the correct number.
       </div>
 
       <div className="gameOptionsContainer">
-        <GameOption handleGameOption={handleGameOption("low")} />
-        <GameOption handleGameOption={handleGameOption("high")} />
-        <GameOption handleGameOption={handleGameOption("correct")} />
+        <GameOption value={"low"} handleFunction={handleGameOption} />
+        <GameOption value={"high"} handleFunction={handleGameOption} />
+        <GameOption value={"correct"} handleFunction={handleGameOption} />
       </div>
 
       <div className="text">

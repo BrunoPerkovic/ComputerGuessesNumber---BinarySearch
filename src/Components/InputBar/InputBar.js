@@ -5,7 +5,6 @@ const InputBar = ({ value, onChangeFunction, onKeyUpFunction }) => {
     <input
       type="number"
       className="inputbar"
-      value={value}
       onChange={onChangeFunction}
       onKeyUp={onKeyUpFunction}
     ></input>

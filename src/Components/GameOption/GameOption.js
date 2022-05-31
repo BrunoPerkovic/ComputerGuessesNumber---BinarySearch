@@ -1,15 +1,16 @@
 import React from "react";
 import "./GameOption.scss";
-const GameOption = ({ handleGameOption, value }) => {
+const GameOption = ({ handleFunction, value }) => {
   return (
-    <div
+    <a
+      href="#"
       className="gameOption"
       onClick={() => {
-        handleGameOption(value);
+        handleFunction(value);
       }}
     >
       {value.toUpperCase()}
-    </div>
+    </a>
   );
 };
 
