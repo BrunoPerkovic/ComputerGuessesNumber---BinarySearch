@@ -1,0 +1,10 @@
+.app {
+  box-sizing: border-box;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, lightblue, pink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
