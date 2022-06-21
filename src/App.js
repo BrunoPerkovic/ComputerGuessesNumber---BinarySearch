@@ -113,7 +113,8 @@ function App() {
     <div className="app">
       <div className="rangeGeneratorContainer">
         <div className="text">
-          Insert a number which will be the length of range:
+          Insert a number which will be the length of range (NOTE! Range starts
+          from 0 so if you want your range to be 50, you need to enter 51):
         </div>
         <InputBar
           onChangeFunction={handlePlayerInput}
@@ -123,7 +124,7 @@ function App() {
 
       <div className="text">
         This range goes from {arrayRange[0]} to{" "}
-        {arrayRange[arrayRange.length - 1]}
+        {arrayRange[arrayRange.length - 1]}.
       </div>
 
       <div className="guessedNumberContainer">
@@ -136,7 +137,7 @@ function App() {
       </div>
 
       <div className="text">
-        Number you choose for computer to guess is {chosenNumber}
+        Number you choose for computer to guess is {chosenNumber}.
       </div>
 
       <button
@@ -155,9 +156,21 @@ function App() {
       </div>
 
       <div className="gameOptionsContainer">
-        <GameOption value={"low"} handleFunction={handleGameOption} />
-        <GameOption value={"high"} handleFunction={handleGameOption} />
-        <GameOption value={"correct"} handleFunction={handleGameOption} />
+        <GameOption
+          value={"low"}
+          handleFunction={handleGameOption}
+          className={"low"}
+        />
+        <GameOption
+          value={"high"}
+          handleFunction={handleGameOption}
+          className={"high"}
+        />
+        <GameOption
+          value={"correct"}
+          handleFunction={handleGameOption}
+          className={"correct"}
+        />
       </div>
 
       <div className="text">
